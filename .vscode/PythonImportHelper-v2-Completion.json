@@ -1,0 +1,264 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "to_categorical",
+        "importPath": "tensorflow.keras.utils",
+        "description": "tensorflow.keras.utils",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.utils",
+        "documentation": {}
+    },
+    {
+        "label": "load_img",
+        "importPath": "tensorflow.keras.preprocessing.image",
+        "description": "tensorflow.keras.preprocessing.image",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing.image",
+        "documentation": {}
+    },
+    {
+        "label": "img_to_array",
+        "importPath": "tensorflow.keras.preprocessing.image",
+        "description": "tensorflow.keras.preprocessing.image",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing.image",
+        "documentation": {}
+    },
+    {
+        "label": "ImageDataGenerator",
+        "importPath": "tensorflow.python.keras.preprocessing.image",
+        "description": "tensorflow.python.keras.preprocessing.image",
+        "isExtraImport": true,
+        "detail": "tensorflow.python.keras.preprocessing.image",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "log_loss",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "mapper",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def mapper(value):\n    return reverse_mapping[value]\nprediction=model.predict(prediction_image)\nvalue=np.argmax(prediction)\nmove_name=mapper(value)\nprint(\"Prediction is {}.\".format(move_name))\nprint(test.shape)\nprediction2=model.predict(test)\nprint(prediction2.shape)\npred2=[]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "directory",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "directory = 'breeds/TRAIN'\ndirectory2 = 'breeds/TEST'\nName=[]\nfor file in os.listdir(directory):\n    Name+=[file]\nprint(Name)\nprint(len(Name))\n['basset_hound', 'beagle', 'russian_blue', 'pomeranian', 'ragdoll', 'staffordshire_bull_terrier', 'keeshond', 'siamese', 'pug', 'shiba_inu', 'american_pit_bull_terrier', 'bengal', 'british_shorthair', 'newfoundland', 'havanese', 'japanese_chin', 'german_shorthaired', 'birman', 'maine_coon', 'english_cocker_spaniel', 'scottish_terrier', 'wheaten_terrier', 'chihuahua', 'american_bulldog', 'abyssinian', 'boxer', 'yorkshire_terrier', 'miniature_pinscher', 'sphynx', 'samoyed', 'leonberger', 'bombay', 'english_setter', 'persian', 'great_pyrenees', 'egyptian_mau', 'saint_bernard']\n37\nmapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdoll':4, ",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "directory2",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "directory2 = 'breeds/TEST'\nName=[]\nfor file in os.listdir(directory):\n    Name+=[file]\nprint(Name)\nprint(len(Name))\n['basset_hound', 'beagle', 'russian_blue', 'pomeranian', 'ragdoll', 'staffordshire_bull_terrier', 'keeshond', 'siamese', 'pug', 'shiba_inu', 'american_pit_bull_terrier', 'bengal', 'british_shorthair', 'newfoundland', 'havanese', 'japanese_chin', 'german_shorthaired', 'birman', 'maine_coon', 'english_cocker_spaniel', 'scottish_terrier', 'wheaten_terrier', 'chihuahua', 'american_bulldog', 'abyssinian', 'boxer', 'yorkshire_terrier', 'miniature_pinscher', 'sphynx', 'samoyed', 'leonberger', 'bombay', 'english_setter', 'persian', 'great_pyrenees', 'egyptian_mau', 'saint_bernard']\n37\nmapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdoll':4, \n         'staffordshire_bull_terrier':5, 'keeshond':6, 'siamese':7, 'pug':8, 'shiba_inu':9, ",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "datagen",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "datagen = ImageDataGenerator(horizontal_flip=True,vertical_flip=True,rotation_range=20,zoom_range=0.2,\n                        width_shift_range=0.2,height_shift_range=0.2,shear_range=0.1,fill_mode=\"nearest\")\npretrained_model3 = tf.keras.applications.DenseNet121(input_shape=(180,180,3),include_top=False,weights='imagenet',pooling='avg')\npretrained_model3.trainable = False\ninputs3 = pretrained_model3.input\nx3 = tf.keras.layers.Dense(128, activation='relu')(pretrained_model3.output)\noutputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "pretrained_model3",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "pretrained_model3 = tf.keras.applications.DenseNet121(input_shape=(180,180,3),include_top=False,weights='imagenet',pooling='avg')\npretrained_model3.trainable = False\ninputs3 = pretrained_model3.input\nx3 = tf.keras.layers.Dense(128, activation='relu')(pretrained_model3.output)\noutputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "pretrained_model3.trainable",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "pretrained_model3.trainable = False\ninputs3 = pretrained_model3.input\nx3 = tf.keras.layers.Dense(128, activation='relu')(pretrained_model3.output)\noutputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)\nground = np.argmax(testy,axis=1)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "inputs3",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "inputs3 = pretrained_model3.input\nx3 = tf.keras.layers.Dense(128, activation='relu')(pretrained_model3.output)\noutputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)\nground = np.argmax(testy,axis=1)\nprint(classification_report(ground,pred))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "x3",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "x3 = tf.keras.layers.Dense(128, activation='relu')(pretrained_model3.output)\noutputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)\nground = np.argmax(testy,axis=1)\nprint(classification_report(ground,pred))\nget_acc = his.history['accuracy']",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "outputs3",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "outputs3 = tf.keras.layers.Dense(37, activation='softmax')(x3)\nmodel = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)\nground = np.argmax(testy,axis=1)\nprint(classification_report(ground,pred))\nget_acc = his.history['accuracy']\nvalue_acc = his.history['val_accuracy']",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "model = tf.keras.Model(inputs=inputs3, outputs=outputs3)\nmodel.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])\nhis=model.fit(datagen.flow(trainx,trainy,batch_size=32),validation_data=(testx,testy),epochs=30)\ny_pred=model.predict(testx)\npred=np.argmax(y_pred,axis=1)\nground = np.argmax(testy,axis=1)\nprint(classification_report(ground,pred))\nget_acc = his.history['accuracy']\nvalue_acc = his.history['val_accuracy']\nget_loss = his.history['loss']",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ground",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "ground = np.argmax(testy,axis=1)\nprint(classification_report(ground,pred))\nget_acc = his.history['accuracy']\nvalue_acc = his.history['val_accuracy']\nget_loss = his.history['loss']\nvalidation_loss = his.history['val_loss']\nepochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_acc",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "get_acc = his.history['accuracy']\nvalue_acc = his.history['val_accuracy']\nget_loss = his.history['loss']\nvalidation_loss = his.history['val_loss']\nepochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')\nplt.legend(loc=0)\nplt.figure()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "value_acc",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "value_acc = his.history['val_accuracy']\nget_loss = his.history['loss']\nvalidation_loss = his.history['val_loss']\nepochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')\nplt.legend(loc=0)\nplt.figure()\nplt.show()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_loss",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "get_loss = his.history['loss']\nvalidation_loss = his.history['val_loss']\nepochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')\nplt.legend(loc=0)\nplt.figure()\nplt.show()\nepochs = range(len(get_loss))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "validation_loss",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "validation_loss = his.history['val_loss']\nepochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')\nplt.legend(loc=0)\nplt.figure()\nplt.show()\nepochs = range(len(get_loss))\nplt.plot(epochs, get_loss, 'r', label='Loss of Training data')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "epochs",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "epochs = range(len(get_acc))\nplt.plot(epochs, get_acc, 'r', label='Accuracy of Training data')\nplt.plot(epochs, value_acc, 'b', label='Accuracy of Validation data')\nplt.title('Training vs validation accuracy')\nplt.legend(loc=0)\nplt.figure()\nplt.show()\nepochs = range(len(get_loss))\nplt.plot(epochs, get_loss, 'r', label='Loss of Training data')\nplt.plot(epochs, validation_loss, 'b', label='Loss of Validation data')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "epochs",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "epochs = range(len(get_loss))\nplt.plot(epochs, get_loss, 'r', label='Loss of Training data')\nplt.plot(epochs, validation_loss, 'b', label='Loss of Validation data')\nplt.title('Training vs validation loss')\nplt.legend(loc=0)\nplt.figure()\nplt.show()\nload_img(\"breeds/TEST/1006.jpg\",target_size=(180,180))\nimage=load_img(\"breeds/TEST/1006.jpg\",target_size=(180,180))\nimage=img_to_array(image) ",
+        "detail": "main",
+        "documentation": {}
+    }
+]
