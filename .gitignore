@@ -1,5 +1,4 @@
 breeds/*
-models/tfjs
 models/tfjs1
 *.zip
 frontend/node_modules
