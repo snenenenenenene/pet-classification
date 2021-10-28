@@ -1,59 +1,70 @@
-html {
-  text-align: center;
-  background-color: #ececec;
-  height: 100vh;
-}
-
-* {
-  font-family: 'Quicksand', sans-serif;
-}
-
-.dashboard {
-  background-color: rgb(255, 255, 255);
-  height: 70vh;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-              0 2px 2px rgba(0,0,0,0.12), 
-              0 4px 4px rgba(0,0,0,0.12), 
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-  margin: 30px 30px;
-  border-radius: 10px;
-  padding: 10px;
-  
-}
-
-.navbar {
-  background-color: rgb(52, 48, 71);
+.App {
   width: 100%;
-  height: 4rem
+  height: 100vh;
+  background-color: #1c2127;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.navbar h1 {
-  color: white;
-  text-align: start;
-  margin: 0 30px;
-  padding: 10px
+.predictions-container {
+position: absolute;
+left: 3%;
+right: 0px;
+top: 40%;
+max-width: 34%;
+width: 34%;
+text-align: center;
 }
 
-.file-input::-webkit-file-upload-button {
-  visibility: hidden;
+.prediction-box {
+  border-color: #fff;
+  border: 1px solid;
+  padding: 10px;
 }
 
-input[type="file"] {
+.detector {
+  min-width: 200px;
+  height: 700px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.target-img {
+  height: 100%;
+}
+
+.hidden-input {
   display: none;
 }
 
-.file-input::before {
-  content: 'Upload a picture';
-  display: inline-block;
-  background: rgb(52, 48, 71);
-  color: white;
-  border-radius: 5px;
-  padding: 5px 8px;
+.select-btn {
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: #0a0f22;
+  font-size: 16px;
+  font-weight: 500;
   outline: none;
-  white-space: nowrap;
+  margin-top: 2em;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 1em;
+  transition: all 260ms ease-in-out;
+  
 }
 
+.select-btn:hover {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}

@@ -1,119 +1,5 @@
 [
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "tensorflow",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tensorflow",
-        "description": "tensorflow",
-        "detail": "tensorflow",
-        "documentation": {}
-    },
-    {
-        "label": "keras",
-        "importPath": "tensorflow",
-        "description": "tensorflow",
-        "isExtraImport": true,
-        "detail": "tensorflow",
-        "documentation": {}
-    },
-    {
-        "label": "def_function",
-        "importPath": "tensorflow.python.eager",
-        "description": "tensorflow.python.eager",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.eager",
-        "documentation": {}
-    },
-    {
-        "label": "def_function",
-        "importPath": "tensorflow.python.eager",
-        "description": "tensorflow.python.eager",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.eager",
-        "documentation": {}
-    },
-    {
-        "label": "constant_op",
-        "importPath": "tensorflow.python.framework",
-        "description": "tensorflow.python.framework",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.framework",
-        "documentation": {}
-    },
-    {
-        "label": "dtypes",
-        "importPath": "tensorflow.python.framework",
-        "description": "tensorflow.python.framework",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.framework",
-        "documentation": {}
-    },
-    {
-        "label": "constant_op",
-        "importPath": "tensorflow.python.framework",
-        "description": "tensorflow.python.framework",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.framework",
-        "documentation": {}
-    },
-    {
-        "label": "variables",
-        "importPath": "tensorflow.python.ops",
-        "description": "tensorflow.python.ops",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.ops",
-        "documentation": {}
-    },
-    {
-        "label": "variables",
-        "importPath": "tensorflow.python.ops",
-        "description": "tensorflow.python.ops",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.ops",
-        "documentation": {}
-    },
-    {
-        "label": "tracking",
-        "importPath": "tensorflow.python.training.tracking",
-        "description": "tensorflow.python.training.tracking",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.training.tracking",
-        "documentation": {}
-    },
-    {
-        "label": "tracking",
-        "importPath": "tensorflow.python.training.tracking",
-        "description": "tensorflow.python.training.tracking",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.training.tracking",
-        "documentation": {}
-    },
-    {
-        "label": "save",
-        "importPath": "tensorflow.python.saved_model.save",
-        "description": "tensorflow.python.saved_model.save",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.saved_model.save",
-        "documentation": {}
-    },
-    {
-        "label": "save",
-        "importPath": "tensorflow.python.saved_model.save",
-        "description": "tensorflow.python.saved_model.save",
-        "isExtraImport": true,
-        "detail": "tensorflow.python.saved_model.save",
-        "documentation": {}
-    },
-    {
         "label": "numpy",
         "kind": 6,
         "isExtraImport": true,
@@ -132,12 +18,38 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "matplotlib.pyplot",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "matplotlib.pyplot",
         "description": "matplotlib.pyplot",
         "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "keras",
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "isExtraImport": true,
+        "detail": "tensorflow",
         "documentation": {}
     },
     {
@@ -235,132 +147,6 @@
         "description": "PIL",
         "isExtraImport": true,
         "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "input_data",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "input_data = constant_op.constant(1, shape=[2], dtype=tf.int64)\nroot = tracking.AutoTrackable()\nroot.v1 = variables.Variable(3, dtype=tf.int64)\nroot.v2 = variables.Variable(2, dtype=tf.int64)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * x)\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "root",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "root = tracking.AutoTrackable()\nroot.v1 = variables.Variable(3, dtype=tf.int64)\nroot.v2 = variables.Variable(2, dtype=tf.int64)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * x)\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.v1",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "root.v1 = variables.Variable(3, dtype=tf.int64)\nroot.v2 = variables.Variable(2, dtype=tf.int64)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * x)\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.v2",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "root.v2 = variables.Variable(2, dtype=tf.int64)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * x)\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.f",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "root.f = def_function.function(lambda x: root.v1 * root.v2 * x)\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "to_save",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "to_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "save_dir",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "peekOfCode": "save_dir = os.path.join('..', 'test_objects', 'saved_model', 'int64_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.int64_model",
-        "documentation": {}
-    },
-    {
-        "label": "input_data",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "input_data = constant_op.constant(1, shape=[1], dtype=tf.uint8)\nroot = tracking.AutoTrackable()\nroot.v1 = variables.Variable(3)\nroot.v2 = variables.Variable(2)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * tf.cast(x, tf.int32))\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "root",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "root = tracking.AutoTrackable()\nroot.v1 = variables.Variable(3)\nroot.v2 = variables.Variable(2)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * tf.cast(x, tf.int32))\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.v1",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "root.v1 = variables.Variable(3)\nroot.v2 = variables.Variable(2)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * tf.cast(x, tf.int32))\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.v2",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "root.v2 = variables.Variable(2)\nroot.f = def_function.function(lambda x: root.v1 * root.v2 * tf.cast(x, tf.int32))\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "root.f",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "root.f = def_function.function(lambda x: root.v1 * root.v2 * tf.cast(x, tf.int32))\nto_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "to_save",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "to_save = root.f.get_concrete_function(input_data)\nsave_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "documentation": {}
-    },
-    {
-        "label": "save_dir",
-        "kind": 5,
-        "importPath": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "description": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
-        "peekOfCode": "save_dir = os.path.join('..', 'test_objects', 'saved_model', 'uint8_multiply')\nsave(root, save_dir, to_save)",
-        "detail": "server.node_modules.@tensorflow.tfjs-node.python.unint8_model",
         "documentation": {}
     },
     {
@@ -521,7 +307,7 @@
         "kind": 2,
         "importPath": "model",
         "description": "model",
-        "peekOfCode": "def mapper(value):\n    return reverse_mapping[value]\n# PREDICTION\n#Use prediction to get best match stored in value var\nprediction=model.predict(prediction_image)\nvalue=np.argmax(prediction)\nmove_name=mapper(value)\nprint(f\"Prediction is {format(move_name).capitalize()}.\")",
+        "peekOfCode": "def mapper(value):\n    return reverse_mapping[value]\n# PREDICTION\n#Use prediction to get best match stored in value var\nprint(prediction_image)\nprediction=model.predict(prediction_image)\nvalue=np.argmax(prediction)\nmove_name=mapper(value)\nprint(f\"Prediction is {format(move_name).capitalize()}.\")",
         "detail": "model",
         "documentation": {}
     },

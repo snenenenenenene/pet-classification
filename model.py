@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import os
 
 #Load image
-image=load_img("breeds/TEST/1006.jpg",target_size=(180,180))
+image=load_img("breeds/TEST/1497.jpg",target_size=(180,180))
 # image=load_img("breeds/TEST/1003.jpg",target_size=(180,180))
 
 #Import saved keras model generated and saved by main.py
@@ -39,6 +39,7 @@ def mapper(value):
 # PREDICTION
 
 #Use prediction to get best match stored in value var
+print(prediction_image)
 prediction=model.predict(prediction_image)
 value=np.argmax(prediction)
 move_name=mapper(value)
