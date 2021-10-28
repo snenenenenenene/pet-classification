@@ -9,16 +9,18 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import classification_report, log_loss, accuracy_score
 from sklearn.model_selection import train_test_split
+import tensorflowjs as tfjs
 
-directory = 'breeds/TRAIN'
-directory2 = 'breeds/TEST'
-Name=[]
-for file in os.listdir(directory):
-    Name+=[file]
-print(Name)
-print(len(Name))
-['basset_hound', 'beagle', 'russian_blue', 'pomeranian', 'ragdoll', 'staffordshire_bull_terrier', 'keeshond', 'siamese', 'pug', 'shiba_inu', 'american_pit_bull_terrier', 'bengal', 'british_shorthair', 'newfoundland', 'havanese', 'japanese_chin', 'german_shorthaired', 'birman', 'maine_coon', 'english_cocker_spaniel', 'scottish_terrier', 'wheaten_terrier', 'chihuahua', 'american_bulldog', 'abyssinian', 'boxer', 'yorkshire_terrier', 'miniature_pinscher', 'sphynx', 'samoyed', 'leonberger', 'bombay', 'english_setter', 'persian', 'great_pyrenees', 'egyptian_mau', 'saint_bernard']
-37
+TRAIN = 'breeds/TRAIN'
+TEST = 'breeds/TEST'
+
+dataset, name=[]
+count=0
+pet_dict=[]
+
+for file in os.listdir(TRAIN):
+    pet_dict+=[file]
+
 mapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdoll':4, 
          'staffordshire_bull_terrier':5, 'keeshond':6, 'siamese':7, 'pug':8, 'shiba_inu':9, 
          'american_pit_bull_terrier':10, 'bengal':11, 'british_shorthair':12, 'newfoundland':13, 
@@ -27,11 +29,9 @@ mapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdo
          'american_bulldog':23, 'abyssinian':24, 'boxer':25, 'yorkshire_terrier':26, 'miniature_pinscher':27, 
          'sphynx':28, 'samoyed':29, 'leonberger':30, 'bombay':31, 'english_setter':32, 'persian':33, 
          'great_pyrenees':34, 'egyptian_mau':35, 'saint_bernard':36 }
-dataset=[]
-count=0
 
-for file in os.listdir(directory):
-    path=os.path.join(directory,file)
+for file in os.listdir(TRAIN):
+    path=os.path.join(TRAIN,file)
     for im in os.listdir(path):
         image=load_img(os.path.join(path,im), grayscale=False, color_mode='rgb', target_size=(180,180))
         image=img_to_array(image)
@@ -41,8 +41,8 @@ for file in os.listdir(directory):
 test=[]
 testfile=[]
 
-for file in os.listdir(directory2):
-    path=os.path.join(directory2,file)
+for file in os.listdir(TEST):
+    path=os.path.join(TEST,file)
     image=load_img(path, grayscale=False, color_mode='rgb', target_size=(180,180))
     image=img_to_array(image)
     image=image/255.0
@@ -137,4 +137,9 @@ for item in prediction2:
     move_name2=mapper(value2)
     pred2+=[move_name2]
 
-model.save('models/model1.h5')
+# SERIALISATION
+
+#Uncomment to save model & to export it to a tsjs compatible format.
+
+# model.save('models/model1.h5')
+# tfjs.converters.save_keras_model(model, 'models/tfjs1')

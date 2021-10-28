@@ -1,3 +1,4 @@
-breeds
-models
+breeds/*
+models/*
 *.zip
+node_modules
