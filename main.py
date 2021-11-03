@@ -14,21 +14,30 @@ import tensorflowjs as tfjs
 TRAIN = 'breeds/TRAIN'
 TEST = 'breeds/TEST'
 
-dataset, name=[]
+dataset=[] 
+name=[]
 count=0
 pet_dict=[]
 
 for file in os.listdir(TRAIN):
     pet_dict+=[file]
 
-mapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdoll':4, 
-         'staffordshire_bull_terrier':5, 'keeshond':6, 'siamese':7, 'pug':8, 'shiba_inu':9, 
-         'american_pit_bull_terrier':10, 'bengal':11, 'british_shorthair':12, 'newfoundland':13, 
-         'havanese':14, 'japanese_chin':15, 'german_shorthaired':16, 'birman':17, 'maine_coon':18, 
-         'english_cocker_spaniel':19, 'scottish_terrier':20, 'wheaten_terrier':21, 'chihuahua':22, 
-         'american_bulldog':23, 'abyssinian':24, 'boxer':25, 'yorkshire_terrier':26, 'miniature_pinscher':27, 
-         'sphynx':28, 'samoyed':29, 'leonberger':30, 'bombay':31, 'english_setter':32, 'persian':33, 
-         'great_pyrenees':34, 'egyptian_mau':35, 'saint_bernard':36 }
+# mapping={ 'basset_hound':0, 'beagle':1, 'russian_blue':2, 'pomeranian':3, 'ragdoll':4, 
+#          'staffordshire_bull_terrier':5, 'keeshond':6, 'siamese':7, 'pug':8, 'shiba_inu':9, 
+#          'american_pit_bull_terrier':10, 'bengal':11, 'british_shorthair':12, 'newfoundland':13, 
+#          'havanese':14, 'japanese_chin':15, 'german_shorthaired':16, 'birman':17, 'maine_coon':18, 
+#          'english_cocker_spaniel':19, 'scottish_terrier':20, 'wheaten_terrier':21, 'chihuahua':22, 
+#          'american_bulldog':23, 'abyssinian':24, 'boxer':25, 'yorkshire_terrier':26, 'miniature_pinscher':27, 
+#          'sphynx':28, 'samoyed':29, 'leonberger':30, 'bombay':31, 'english_setter':32, 'persian':33, 
+        #  'great_pyrenees':34, 'egyptian_mau':35, 'saint_bernard':36 }
+mapping={ 'basset_hound':3, 'beagle':4, 'russian_blue':27, 'pomeranian':24, 'ragdoll':26, 
+         'staffordshire_bull_terrier':34, 'keeshond':18, 'siamese':32, 'pug':25, 'shiba_inu':31, 
+         'american_pit_bull_terrier':2, 'bengal':5, 'british_shorthair':9, 'newfoundland':22, 
+         'havanese':16, 'japanese_chin':17, 'german_shorthaired':14, 'birman':6, 'maine_coon':20, 
+         'english_cocker_spaniel':12, 'scottish_terrier':30, 'wheaten_terrier':35, 'chihuahua':10, 
+         'american_bulldog':1, 'abyssinian':0, 'boxer':8, 'yorkshire_terrier':36, 'miniature_pinscher':21, 
+         'sphynx':33, 'samoyed':29, 'leonberger':19, 'bombay':7, 'english_setter':13, 'persian':23, 
+         'great_pyrenees':15, 'egyptian_mau':11, 'saint_bernard':28 }
 
 for file in os.listdir(TRAIN):
     path=os.path.join(TRAIN,file)
@@ -110,14 +119,23 @@ image=image/255.0
 prediction_image=np.array(image)
 prediction_image= np.expand_dims(image, axis=0)
 
-reverse_mapping={  0:'basset_hound', 1:'beagle', 2:'russian_blue', 3:'pomeranian', 4:'ragdoll', 
-         5:'staffordshire_bull_terrier', 6:'keeshond', 7:'siamese', 8:'pug', 9:'shiba_inu', 
-         10:'american_pit_bull_terrier', 11:'bengal', 12:'british_shorthair', 13:'newfoundland', 
-         14:'havanese', 15:'japanese_chin', 16:'german_shorthaired', 17:'birman', 18:'maine_coon', 
-         19:'english_cocker_spaniel', 20:'scottish_terrier', 21:'wheaten_terrier', 22:'chihuahua', 
-         23:'american_bulldog', 24:'abyssinian', 25:'boxer', 26:'yorkshire_terrier', 27:'miniature_pinscher', 
-         28:'sphynx', 29:'samoyed', 30:'leonberger', 31:'bombay', 32:'english_setter', 33:'persian', 
-         34:'great_pyrenees', 35:'egyptian_mau', 36:'saint_bernard' } 
+# reverse_mapping={  0:'basset_hound', 1:'beagle', 2:'russian_blue', 3:'pomeranian', 4:'ragdoll', 
+#          5:'staffordshire_bull_terrier', 6:'keeshond', 7:'siamese', 8:'pug', 9:'shiba_inu', 
+#          10:'american_pit_bull_terrier', 11:'bengal', 12:'british_shorthair', 13:'newfoundland', 
+#          14:'havanese', 15:'japanese_chin', 16:'german_shorthaired', 17:'birman', 18:'maine_coon', 
+#          19:'english_cocker_spaniel', 20:'scottish_terrier', 21:'wheaten_terrier', 22:'chihuahua', 
+#          23:'american_bulldog', 24:'abyssinian', 25:'boxer', 26:'yorkshire_terrier', 27:'miniature_pinscher', 
+#          28:'sphynx', 29:'samoyed', 30:'leonberger', 31:'bombay', 32:'english_setter', 33:'persian', 
+#          34:'great_pyrenees', 35:'egyptian_mau', 36:'saint_bernard' } 
+
+reverse_mapping = { 'basset_hound':3, 'beagle':4, 'russian_blue':27, 'pomeranian':24, 'ragdoll':26, 
+         'staffordshire_bull_terrier':34, 'keeshond':18, 'siamese':32, 'pug':25, 'shiba_inu':31, 
+         'american_pit_bull_terrier':2, 'bengal':5, 'british_shorthair':9, 'newfoundland':22, 
+         'havanese':16, 'japanese_chin':17, 'german_shorthaired':14, 'birman':6, 'maine_coon':20, 
+         'english_cocker_spaniel':12, 'scottish_terrier':30, 'wheaten_terrier':35, 'chihuahua':10, 
+         'american_bulldog':1, 'abyssinian':0, 'boxer':8, 'yorkshire_terrier':36, 'miniature_pinscher':21, 
+         'sphynx':33, 'samoyed':29, 'leonberger':19, 'bombay':7, 'english_setter':13, 'persian':23, 
+         'great_pyrenees':15, 'egyptian_mau':11, 'saint_bernard':28 }
 
 def mapper(value):
     return reverse_mapping[value]
