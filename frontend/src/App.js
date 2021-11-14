@@ -74,6 +74,7 @@ const App = () => {
 
     let result = await model.predict(tensor).data();
     console.log(result)
+    console.log("good soup");
     result.map((entry, i) => {
       setPredictions(
         (predictions[
