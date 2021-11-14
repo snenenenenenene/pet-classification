@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
+import loader from './loader.svg';
 
 const App = () => {
   const fileInputRef = useRef();
@@ -11,43 +12,43 @@ const App = () => {
   const [isLoading, setLoading] = useState(false);
   const isEmptyPredictions = !predictions || predictions.length === 0;
   let breeds = {
-    0: "abyssinian",
-    1: "american_bulldog",
-    2: "american_pit_bull_terrier",
-    3: "basset_hound",
-    4: "beagle",
-    5: "bengal",
-    6: "birman",
-    7: "bombay",
-    8: "boxer",
-    9: "british_shorthair",
-    10: "chihuahua",
-    11: "egyptian_mau",
-    12: "english_cocker_spaniel",
-    13: "english_setter",
-    14: "german_shorthaired",
-    15: "great_pyrenees",
-    16: "havanese",
-    17: "japanese_chin",
-    18: "keeshond",
-    19: "leonberger",
-    20: "maine_coon",
-    21: "miniature_pinscher",
-    22: "newfoundland",
-    23: "persian",
-    24: "pomeranian",
-    25: "pug",
-    26: "ragdoll",
-    27: "russian_blue",
-    28: "saint_bernard",
-    29: "samoyed",
-    30: "scottish_terrier",
-    31: "shiba_inu",
-    32: "siamese",
-    33: "sphynx",
-    34: "staffordshire_bull_terrier",
-    35: "wheaten_terrier",
-    36: "yorkshire_terrier",
+    0: "Abyssinian",
+    1: "American Bulldog",
+    2: "American Pit Bull Terrier",
+    3: "Basset Hound",
+    4: "Beagle",
+    5: "Bengal",
+    6: "Birman",
+    7: "Bombay",
+    8: "Boxer",
+    9: "British Shorthair",
+    10: "Chihuahua",
+    11: "Egyptian Mau",
+    12: "English Cocker Spaniel",
+    13: "English Setter",
+    14: "German Shorthaired",
+    15: "Great Pyrenees",
+    16: "Havanese",
+    17: "Japanese Chin",
+    18: "Keeshond",
+    19: "Leonberger",
+    20: "Maine Coon",
+    21: "Miniature Pinscher",
+    22: "Newfoundland",
+    23: "Persian",
+    24: "Pomeranian",
+    25: "Pug",
+    26: "Ragdoll",
+    27: "Russian Blue",
+    28: "Saint Bernard",
+    29: "Samoyed",
+    30: "Scottish Terrier",
+    31: "Shiba Inu",
+    32: "Siamese",
+    33: "Sphynx",
+    34: "Staffordshire Bull Terrier",
+    35: "Wheaten Terrier",
+    36: "Yorkshire Terrier",
   };
 
   const openFilePicker = () => {
@@ -61,36 +62,33 @@ const App = () => {
   const detectObjectsOnImage = async (imageElement, imgSize) => {
     const model = await tf.loadLayersModel(
       "https://raw.githubusercontent.com/snenenenenenene/pet-prediction/main/models/tfjs/model.json"
+      //  ,{weightPathPrefix: "../../models/tfjs/"}
     );
+
+    console.log(model)
     const tensor = tf.browser
       .fromPixels(imageRef.current, 3)
       .resizeNearestNeighbor([180, 180])
       .expandDims()
       .toFloat();
-    let result = await model.predict(tensor, 180).data();
-    console.log("RESULT");
-    
-    console.log(result)
-    const value = Math.max(result)
-    console.log(value)
-    const move_name = mapper(value)
-    console.log(move_name)
 
-    // result.map((entry, i) => {
-    //   console.log(entry)
-    //   setPredictions(
-    //     (predictions[
-    //       parseFloat(entry * 100)
-    //         .toFixed(8)
-    //         // .replace(/\.?0+$/, "")
-    //     ] = breeds[i])
-    //   );
-    // });
-    // setPredictions(
-    //   Object.fromEntries(
-    //     Object.entries(predictions).sort().reverse().slice(0, 3)
-    //   )
-    // );
+    let result = await model.predict(tensor).data();
+    console.log(result)
+    result.map((entry, i) => {
+      setPredictions(
+        (predictions[
+          parseFloat(entry * 100)
+            .toFixed(2)
+            .replace(/\.?0+$/, "")
+        ] = breeds[i])
+      );
+    });
+    setPredictions(
+      Object.fromEntries(
+        Object.entries(predictions).sort().reverse().slice(0, 3)
+      )
+    );
+    console.log(predictions)
 
     setPredictionFinished(true);
   };
@@ -129,6 +127,9 @@ const App = () => {
     if (predictionFinished === true) {
       return (
         <div className="predictions-container">
+          <div className="prediction-box">
+            PREDICTIONS (%)
+          </div>
           {Object.keys(predictions).map((keys) => {
             return (
               <div className="prediction-box">
@@ -143,8 +144,13 @@ const App = () => {
     }
   };
 
+  const Loader = () => {
+    return <img className="loader" src={loader}/>;
+  }
+
   return (
     <div className="App">
+      {isLoading ? <Loader/> : <div/>}
       <div className="container">
         <div className="detector">
           {imgData && (

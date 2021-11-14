@@ -30,14 +30,46 @@ for file in os.listdir(TRAIN):
 #          'american_bulldog':23, 'abyssinian':24, 'boxer':25, 'yorkshire_terrier':26, 'miniature_pinscher':27, 
 #          'sphynx':28, 'samoyed':29, 'leonberger':30, 'bombay':31, 'english_setter':32, 'persian':33, 
         #  'great_pyrenees':34, 'egyptian_mau':35, 'saint_bernard':36 }
-mapping={ 'basset_hound':3, 'beagle':4, 'russian_blue':27, 'pomeranian':24, 'ragdoll':26, 
-         'staffordshire_bull_terrier':34, 'keeshond':18, 'siamese':32, 'pug':25, 'shiba_inu':31, 
-         'american_pit_bull_terrier':2, 'bengal':5, 'british_shorthair':9, 'newfoundland':22, 
-         'havanese':16, 'japanese_chin':17, 'german_shorthaired':14, 'birman':6, 'maine_coon':20, 
-         'english_cocker_spaniel':12, 'scottish_terrier':30, 'wheaten_terrier':35, 'chihuahua':10, 
-         'american_bulldog':1, 'abyssinian':0, 'boxer':8, 'yorkshire_terrier':36, 'miniature_pinscher':21, 
-         'sphynx':33, 'samoyed':29, 'leonberger':19, 'bombay':7, 'english_setter':13, 'persian':23, 
-         'great_pyrenees':15, 'egyptian_mau':11, 'saint_bernard':28 }
+
+mapping={
+	"abyssinian": 0,
+	"american_bulldog": 1,
+	"american_pit_bull_terrier": 2,
+	"basset_hound": 3,
+	"beagle": 4,
+	"bengal": 5,
+	"birman": 6,
+	"bombay": 7,
+	"boxer": 8,
+	"british_shorthair": 9,
+	"chihuahua": 10,
+	"egyptian_mau": 11,
+	"english_cocker_spaniel": 12,
+	"english_setter": 13,
+	"german_shorthaired": 14,
+	"great_pyrenees": 15,
+	"havanese": 16,
+	"japanese_chin": 17,
+	"keeshond": 18,
+	"leonberger": 19,
+	"maine_coon": 20,
+	"miniature_pinscher": 21,
+	"newfoundland": 22,
+	"persian": 23,
+	"pomeranian": 24,
+	"pug": 25,
+	"ragdoll": 26,
+	"russian_blue": 27,
+	"saint_bernard": 28,
+	"samoyed": 29,
+	"scottish_terrier": 30,
+	"shiba_inu": 31,
+	"siamese": 32,
+	"sphynx": 33,
+	"staffordshire_bull_terrier": 34,
+	"wheaten_terrier": 35,
+	"yorkshire_terrier": 36
+}
 
 for file in os.listdir(TRAIN):
     path=os.path.join(TRAIN,file)
@@ -110,54 +142,18 @@ plt.legend(loc=0)
 plt.figure()
 plt.show()
 
-load_img("breeds/TEST/1006.jpg",target_size=(180,180))
+load_img("breeds/TEST/1492.jpg",target_size=(180,180))
 
-image=load_img("breeds/TEST/1006.jpg",target_size=(180,180))
+image=load_img("breeds/TEST/1492.jpg",target_size=(180,180))
 
 image=img_to_array(image) 
 image=image/255.0
 prediction_image=np.array(image)
 prediction_image= np.expand_dims(image, axis=0)
 
-# reverse_mapping={  0:'basset_hound', 1:'beagle', 2:'russian_blue', 3:'pomeranian', 4:'ragdoll', 
-#          5:'staffordshire_bull_terrier', 6:'keeshond', 7:'siamese', 8:'pug', 9:'shiba_inu', 
-#          10:'american_pit_bull_terrier', 11:'bengal', 12:'british_shorthair', 13:'newfoundland', 
-#          14:'havanese', 15:'japanese_chin', 16:'german_shorthaired', 17:'birman', 18:'maine_coon', 
-#          19:'english_cocker_spaniel', 20:'scottish_terrier', 21:'wheaten_terrier', 22:'chihuahua', 
-#          23:'american_bulldog', 24:'abyssinian', 25:'boxer', 26:'yorkshire_terrier', 27:'miniature_pinscher', 
-#          28:'sphynx', 29:'samoyed', 30:'leonberger', 31:'bombay', 32:'english_setter', 33:'persian', 
-#          34:'great_pyrenees', 35:'egyptian_mau', 36:'saint_bernard' } 
-
-reverse_mapping = { 'basset_hound':3, 'beagle':4, 'russian_blue':27, 'pomeranian':24, 'ragdoll':26, 
-         'staffordshire_bull_terrier':34, 'keeshond':18, 'siamese':32, 'pug':25, 'shiba_inu':31, 
-         'american_pit_bull_terrier':2, 'bengal':5, 'british_shorthair':9, 'newfoundland':22, 
-         'havanese':16, 'japanese_chin':17, 'german_shorthaired':14, 'birman':6, 'maine_coon':20, 
-         'english_cocker_spaniel':12, 'scottish_terrier':30, 'wheaten_terrier':35, 'chihuahua':10, 
-         'american_bulldog':1, 'abyssinian':0, 'boxer':8, 'yorkshire_terrier':36, 'miniature_pinscher':21, 
-         'sphynx':33, 'samoyed':29, 'leonberger':19, 'bombay':7, 'english_setter':13, 'persian':23, 
-         'great_pyrenees':15, 'egyptian_mau':11, 'saint_bernard':28 }
-
-def mapper(value):
-    return reverse_mapping[value]
-
-prediction=model.predict(prediction_image)
-value=np.argmax(prediction)
-move_name=mapper(value)
-print("Prediction is {}.".format(move_name))
-
-print(test.shape)
-prediction2=model.predict(test)
-print(prediction2.shape)
-
-pred2=[]
-for item in prediction2:
-    value2=np.argmax(item)      
-    move_name2=mapper(value2)
-    pred2+=[move_name2]
-
 # SERIALISATION
 
 #Uncomment to save model & to export it to a tsjs compatible format.
 
-# model.save('models/model1.h5')
-# tfjs.converters.save_keras_model(model, 'models/tfjs1')
+model.save('models/model1.h5')
+tfjs.converters.save_keras_model(model, 'models/tfjs')

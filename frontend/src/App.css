@@ -16,16 +16,28 @@
 
 .predictions-container {
 position: absolute;
-left: 3%;
+left: 8vh;
 right: 0px;
-top: 40%;
-max-width: 34%;
+top: 30vh;
+max-width: 60vh;
 width: 34%;
 text-align: center;
 }
 
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto 0;
+}
+
 .prediction-box {
-  border-color: #fff;
+  padding: 10px;
+}
+
+.prediction-box:first-of-type {
+  background-color: white;
+  color: #1c2127;
   border: 1px solid;
   padding: 10px;
 }
