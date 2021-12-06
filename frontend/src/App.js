@@ -14,29 +14,26 @@ const App = () => {
   const isEmptyPredictions = !predictions || predictions.length === 0;
 
   const openFilePicker = () => {
+    setPredictions({})
     if (fileInputRef.current) fileInputRef.current.click();
   };
-
-  const mapper = (value) => {
-    return breeds[value]
-  }
 
   const detectObjectsOnImage = async (imageElement, imgSize) => {
     const model = await tf.loadLayersModel(
       "https://raw.githubusercontent.com/snenenenenenene/pet-prediction/main/models/tfjs/model.json"
-      //  ,{weightPathPrefix: "../../models/tfjs/"}
     );
 
-    console.log(model)
     const tensor = tf.browser
-      .fromPixels(imageRef.current, 3)
-      .resizeNearestNeighbor([256, 256])
-      .expandDims()
-      .toFloat();
+    .fromPixels(imageRef.current)
+    .div(255)
+    .resizeNearestNeighbor([256, 256])
+    .expandDims(0)
+    .toFloat();
+
+    console.log(model.getWeights()[123])
 
     let result = await model.predict(tensor).data();
     console.log(result)
-    console.log("good soup");
     result.map((entry, i) => {
       setPredictions(
         (predictions[
@@ -66,7 +63,6 @@ const App = () => {
   };
 
   const onSelectImage = async (e) => {
-    setPredictions([]);
     setLoading(true);
 
     const file = e.target.files[0];
@@ -94,6 +90,14 @@ const App = () => {
             PREDICTIONS (%)
           </div>
           {Object.keys(predictions).map((keys) => {
+            if (predictions[keys] < 50)
+            {
+              return (
+              <div className="prediction-box">
+
+            </div>
+            )
+            }
             return (
               <div className="prediction-box">
                 {predictions[keys]}: {keys}

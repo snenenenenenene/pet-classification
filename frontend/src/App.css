@@ -16,10 +16,10 @@
 
 .predictions-container {
 position: absolute;
-left: 8vh;
+left: 10vh;
 right: 0px;
 top: 30vh;
-max-width: 60vh;
+max-width: 40vh;
 width: 34%;
 text-align: center;
 }
@@ -72,7 +72,7 @@ text-align: center;
   margin-top: 2em;
   cursor: pointer;
   transition: all 260ms ease-in-out;
-  
+
 }
 
 .select-btn:hover {

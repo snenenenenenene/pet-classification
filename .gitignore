@@ -2,3 +2,7 @@ breeds/*
 models/tfjs1
 *.zip
 frontend/node_modules
+.vscode
+.ipynb_checkpoints
+.DS_Store
+
