@@ -1,4 +1,4 @@
-## Pet Prediction
+## Pet Classification
 
 It happens more often than not - especially to animal & pet lovers such as myself - that you come across the most beautiful dog while going for a walk in the park -- or whenever you're mindlessly scrolling Facebook for hours.
 
@@ -25,9 +25,9 @@ The dataset used in this project is the [Animal Breed - Cats and Dogs](https://w
 
 #### Installation
 
-- Clone this repository: `git clone https://github.com/snenenenenenene/dnd-character-tool.git`
+- Clone this repository: `git clone https://github.com/snenenenenenene/pet-classification`
 - Run the jupyter notebook with the data from [Animal Breed - Cats and Dogs](https://www.kaggle.com/imsparsh/animal-breed-cats-and-dogs) in the `/breeds` folder.
-- Change into the directory: `cd ./pet-prediction`
+- Change into the directory: `cd ./pet-classification`
 - Install dependencies: `npm install`
 
 #### Running the Application
