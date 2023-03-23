@@ -26,6 +26,7 @@ const App = () => {
     results.map((entry: any, i: any) => {
       setPredictions(
         (predictions[
+          //@ts-ignore
           parseFloat(entry * 100)
             .toFixed(2)
             .replace(/\.?0+$/, "")
